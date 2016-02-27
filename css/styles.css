@@ -1,42 +1,50 @@
 body {
-  font-family: "Helvetica", "Segoe UI", "Arial", sans-serif !important;
   color: #eee;
+
+  font-family: "Helvetica", "Segoe UI", "Arial", sans-serif !important;
 }
 
 .flipCard {
-  margin: 1% 5%;
   position: relative;
+
   width: 70%;
+  margin: 1% 5%;
   margin: 0 auto 10%;
+
   cursor:pointer;
 }
 
 .imgCard {
   width: 40%;
   margin: 4%;
+
   border-radius: 50%;
 }
 
 .cardTitle {
-  display: inline-block;
   position: absolute;
   top: 50%; left: 50%;
-  transform: translate(-10%,-50%);
+
+  display: inline-block;
+
   min-width: 50%;
+
+  transform: translate(-10%,-50%);
   text-align: center;
-  font-size: 1.1em;
   letter-spacing: 1.2px;
+
+  font-size: 1.1em;
 }
 .front{
-
-  background: #6C7C99;
-  border-radius: 7px;
-
-  transform: perspective(600px) rotateY(0deg);
+  transition: all .55s ease;
   -webkit-transform: perspective(600px) rotateY(0deg);
+  transform: perspective(600px) rotateY(0deg);
+
+  border-radius: 7px;
+  background: #6C7C99;
+
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transition: all .55s ease;
 }
 
 .back {
@@ -44,78 +52,104 @@ body {
   top: 0px;
   left: 0px;
 
-  background: #555;
-  border-radius: 7px;
   min-width: 100%;
   min-height: 100%;
 
-  transform: perspective(600px) rotateY(180deg);
+  transition: all .55s ease;
   -webkit-transform: perspective(600px) rotateY(180deg);
+  transform: perspective(600px) rotateY(180deg);
+
+  border-radius: 7px;
+  background: #555;
+
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transition: all .55s ease;
 }
 
 .briefBio {
   margin: 1em !important;
+
   font-size: .8em;
 }
 
 .flipCard:hover > .front {
-  transform: perspective(600px) rotateY(-180deg);
   -webkit-transform: perspective(600px) rotateY(-180deg);
+  transform: perspective(600px) rotateY(-180deg);
 }
 
 .flipCard:hover > .back  {
-  transform: perspective(600px) rotateY(0deg);
   -webkit-transform: perspective(600px) rotateY(0deg);
+  transform: perspective(600px) rotateY(0deg);
 }
 
+.moreInfo {
+  position: absolute;
+  right: 1px;
+  right:0;
+  bottom: 1px;
+  bottom:0;
+}
+
+.supportInfo {
+  position: absolute;
+  left: 1px;
+  left:0;
+  bottom: 1px;
+  bottom:0;
+}
+
+.supportInfo,
 .moreInfo{
   display: block;
-  position: absolute;
-  bottom: 1px;
-  right: 1px;
+
   margin: 1em 2em;
-  font-size: .8em;
-  letter-spacing: 1.2px;
-  text-shadow: 0px 0px 2px #333;
-  color: #efefef;
-  bottom:0;
-  right:0;
+  padding: 1% 3%;
+
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
   text-align: center;
+  letter-spacing: 1.2px;
+
+  color: #efefef;
   border-width: 2px;
   border-style: solid;
   border-color: #888;
-  background-color: #777;
   border-radius: 5px;
-  padding: 1% 3%;
-  transition-duration: .3s;
-  -webkit-transition-duration: .3s;
+  background-color: #777;
+  text-shadow: 0px 0px 2px #333;
+
+  font-size: .8em;
 }
 
+.supportInfo:hover,
 .moreInfo:hover {
-  background-color: #6C7C99;
   color: #333;
+  background-color: #6C7C99;
   text-shadow: 0px 0px 0px #000;
 }
 
 .areaText {
   width: auto;
-  text-align: center;
-  color: #848FA5;
-  font-size:1.2em;
   margin-bottom: .2em;
+
+  text-align: center;
+
+  color: #848FA5;
+
+  font-size:1.2em;
 }
 
 .sectionTitle {
-  background-color: #5A667F;
   width: 70%;
   margin: 2% auto;
-  border-radius: 7px;
-  font-size: 1.3em;
   padding: 4px;
+
   text-align: center;
+
+  border-radius: 7px;
+  background-color: #5A667F;
+
+  font-size: 1.3em;
 }
 
 /** fullBios **/
@@ -124,36 +158,57 @@ body {
 }
 
 .bioTitle {
-  font-size 1.3em;
   margin: .5em 1em 1em 1em;
+
+  font-size: 1.3em;
 }
 
 .bioInfo {
-  font-size: 1.1em;
-  text-align: left;
   margin: 1em;
+
+  text-align: left;
+
+  font-size: 1.1em;
 }
 
 .imgBio {
   border-radius: 7px;
 }
 
+.imgSupport {
+  border-radius: 7px;
+  width: 80%
+}
+
 .popup {
   position: fixed;
+  /* center it */
+  top: 50%;
+  left: 50%;
+
+  display: none;
+
   width: 80%;
   max-width: 800px;
   max-height: 93%;
   padding: 2%;
-  display: none;
-  background-color: #444;
-  color: #efefef;
-  text-align: center;
-  border-radius: 10px;
 
-  /* center it */
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
+  transform: scale(0.5);
+  text-align: center;
+  transition: all .55w ease-in;
+  /*transition: all 0.75s cubic-bezier(0.28, -0.25, 0.265, 1.55);*/
+
+  opacity: 0;
+  color: #efefef;
+  border-radius: 10px;
+  background-color: #444;
+
+  /* animation
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -100;*/
 }
 
 .popupFrame {
@@ -161,48 +216,81 @@ body {
 }
 
 .popupClose {
+  position: absolute;
+  z-index: 20;
+  top:-32px;
+  right:-32px;
 /*  float: right;
   width:64px;
   margin-top: -5%;
   margin-right: -5%; */
+
   width: 64px;
-  position: absolute;
-  top:-32px;
-  right:-32px;
-  z-index: 20;
 }
 
 .blur {
+  background-color: black;
+
   -webkit-filter: blur(10px);
   filter: blur(10px);
   -ms-filter: blur(10px);
-  background-color: black;
 }
 
 
 /** clearfix **/
 .clearfix::after {
-  content: "";
   display: table;
   clear: both;
+
+  content: "";
 }
 
 .hide {
   visibility: hidden;
 }
 
-.dimBackground {
+.overlay {
   position: fixed;
-  padding:0;
-  margin:0;
-
+  z-index: -100;
   top:0;
-  Left:0;
 
   width:100%;
   height:100%;
-  background:rgba(0,0,0,1);
+  margin:0;
+  padding:0;
+
+  /*transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: scale(0.5);
+
+  opacity: 0;
+
+  Left:0;*/
 }
+
+.dimBackground {
+  z-index: 700;
+
+  background-color: black;
+}
+
+.popup_overlay {
+  z-index: 800;
+
+  transform: scale(1) translate(-50%, -50%);
+
+  opacity: 1;
+}
+
+.supportStaffInfo {
+  position: absolute;
+  background-color: rgba(1, 1, 1, 0.8);
+  bottom: -50px;
+}
+
+.supportNames {
+  font-size: 1.2em;
+}
+
 
 @media screen and (min-width: 400px) {
   .cardTitle {
@@ -213,9 +301,11 @@ body {
     font-size: .9em;
   }
 
+  .supportInfo,
   .moreInfo {
-    font-size: .9em;
     margin: .5em .7em;
+
+    font-size: .9em;
   }
 }
 
@@ -228,6 +318,7 @@ body {
     font-size: 1.3em;
   }
 
+.supportInfo,
   .moreInfo {
     font-size: 1.3em;
   }
@@ -237,6 +328,7 @@ body {
   .cardTitle {
     font-size: 2em;
   }
+
   main {
     padding: 20px 40px;
 
@@ -247,6 +339,7 @@ body {
     line-height: normal;
   }
 
+  .supportInfo,
   .moreInfo {
     font-size: 1.4em;
   }
@@ -272,12 +365,14 @@ body {
 
   .containerSenior {
     margin: auto;
+
     text-align: center;
   }
 
   .containerSenior > .card
 {
     display: inline-block;
+
     width: 20%
   }
 
@@ -287,6 +382,7 @@ body {
   .containerRefundsDistribution,
   .containerSupportProcesses {
     float: left;
+
     width: 20%;
   }
   .flipCard {
@@ -299,8 +395,10 @@ body {
 
   .sectionTitle {
     display: block;
+
     margin-top: 21%;
     margin-bottom: 23%;
+
     font-size: 1em;
   }
 
@@ -308,18 +406,21 @@ body {
     font-size: .7em;
   }
 
+  .supportInfo,
   .moreInfo {
     font-size: .7em;
   }
 
   .imgBio {
     float: left;
+
     margin: 1.2em 2em 1.2em 1.2em;
   }
 
   .bioTitle {
+    padding: .5em 2em;
+
     font-size: 1.5em;
-    padding: 2em;
   }
 
   .bioInfo {
@@ -334,9 +435,10 @@ body {
 
 @media screen and (min-width: 1100px) {
   .briefBio {
-    font-size: .8em;
+    font-size: .7em;
   }
 
+  .supportInfo,
   .moreInfo {
     font-size: .7em;
   }
@@ -353,12 +455,14 @@ body {
   }
 
   .briefBio {
-    font-size: .9em;
+    font-size: .8em;
   }
 
+  .supportInfo,
   .moreInfo {
-    font-size: .8em;
     margin: .5em .8em;
+
+    font-size: .8em;
   }
 
 }
@@ -379,6 +483,7 @@ body {
       font-size: 1.2em;
     }
 
+    .supportInfo,
     .moreInfo {
       font-size: 1.2em;
     }
