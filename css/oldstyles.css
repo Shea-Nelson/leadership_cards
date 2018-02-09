@@ -1,29 +1,8 @@
-/*********** Hide QL ***********/
-#sideNavBox {
-  display: none !important;
-}
-
-#contentBox {
-  margin-left: 0px !important;
-}
-
 body {
   color: #eee;
-  font-family: "Open Sans", sans-serif, "Segoe UI", "Arial" !important;
-  line-height: 1.4;
-}
 
-.ms-rtestate-field p, p.ms-rteElement-P {
-  line-height: 1.4;
+  font-family: "Helvetica", "Segoe UI", "Arial", sans-serif !important;
 }
-
-/*  new gta global css ok to delete
-#pageTitle {
-  padding-top: 0px;
-  margin-top: 0px;
-  font-size: 2em !important;
-}
-*/
 
 .flipCard {
   position: relative;
@@ -38,12 +17,7 @@ body {
 .imgCard {
   width: 40%;
   margin: 4%;
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
+
   border-radius: 50%;
 }
 
@@ -199,24 +173,11 @@ body {
 
 .imgBio {
   border-radius: 7px;
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
 }
 
 .imgSupport {
   border-radius: 7px;
-  width: 80%;
-  border-radius: 7px;
-  /*-moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";*/
+  width: 80%
 }
 
 .popup {
@@ -395,12 +356,8 @@ body {
 @media screen and (min-width: 1000px) {
   .cardTitle,
   .areaText {
-    font-size: .7em;
+    font-size: 1em;
   }
-  
-  .ms-rtestate-field p, p.ms-rteElement-P {
-  line-height: 1;
-}
 
   main {
     padding-top: 20px;
@@ -446,12 +403,12 @@ body {
   }
 
   .briefBio {
-    font-size: 10px;
+    font-size: .7em;
   }
 
   .supportInfo,
   .moreInfo {
-    font-size: 10px;
+    font-size: .7em;
   }
 
   .imgBio {
@@ -487,7 +444,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1200px) {
   .cardTitle,
   .areaText {
     font-size: 1.2em;
